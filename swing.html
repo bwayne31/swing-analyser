@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Swing-Coach</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #1a1a1a;
+            color: white;
+            padding-top: 20px;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        #liveVideo {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+        #swingCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Allows clicks to pass through to the video */
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #recordButton {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #discardButton {
+            background-color: #f44336;
+            color: white;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <h1>Swing-Coach 🏌️‍♂️</h1>
+    <div class="container">
+        <video id="liveVideo" autoplay playsinline></video>
+        <canvas id="swingCanvas"></canvas>
+    </div>
+    <div class="controls">
+        <button id="recordButton" class="button">Start Recording</button>
+        <button id="discardButton" class="button">Discard & Try Again</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
